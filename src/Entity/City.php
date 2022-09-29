@@ -25,6 +25,9 @@ class City
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $path = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $image = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -74,6 +77,18 @@ class City
     public function setPath(?string $path): self
     {
         $this->path = $path;
+
+        return $this;
+    }
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(?string $image): self
+    {
+        $this->image = $image;
 
         return $this;
     }

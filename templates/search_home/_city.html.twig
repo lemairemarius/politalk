@@ -1,0 +1,15 @@
+<div class="card" style="width: 18rem">
+    {% if com.image == null %}
+        <img src="{{ asset('asset/pictures/images.jpeg') }}"  class="card-img-top" alt="...">
+    {% else %}
+        <img src="{{ com.image }}" alt="" class="card-img-top">
+    {% endif %}
+    <div class="card-body">
+        <H5 class="card-title">{{ com.cityn }}</H5>
+        <div class="card-title">{{ com.postalc }}</div>
+        <p class="card-text">{{ com.mail }}</p>
+        <a href="{{ com.path }}" class="btn btn-primary stretched-link">Page de la commune</a>
+    </div>
+</div>
+
+
