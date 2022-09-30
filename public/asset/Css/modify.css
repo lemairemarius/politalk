@@ -1,5 +1,3 @@
-.grid{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px;
+.backImg{
+    background-image: url("/appli/public/asset/pictures/Communes_of_France.png");
 }

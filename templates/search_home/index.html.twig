@@ -3,13 +3,12 @@
 {% block title %}Recherche des Communes{% endblock %}
 
 {% block body %}
-    <div class="container">
-        <div class="grid">
+    {% include 'header.html.twig' %}
+    <div class="container backImg">
+        <div class="d-flex flex-wrap">
             {% for com in city %}
                 {% include'search_home/_city.html.twig' with {com: com} only %}
             {% endfor %}
         </div>
     </div>
-
-
 {% endblock %}
