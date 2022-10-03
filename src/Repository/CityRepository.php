@@ -2,6 +2,7 @@
 
 namespace App\Repository;
 
+use App\Data\SearchDataCity;
 use App\Entity\City;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
@@ -42,8 +43,23 @@ class CityRepository extends ServiceEntityRepository
  * Récupére les villes en lien avec une recherche
  * @Return City[]
  */
-    public function findSearch():array
+    public function findSearch(SearchDataCity $data):array
     {
-        return $this->findAll();
+        $query = $this
+            ->createQueryBuilder('c');
+
+        if (!empty($data->q)) {
+            $query = $query
+                ->andWhere('c.city_n LIKE :q')
+                ->setParameter('q', "%{$data->q}%");
+        }
+
+        if (!empty($data->postal_c)){
+            $query = $query
+                ->andWhere('c.postal_c LIKE :postal_c')
+                ->setParameter('postal_c',"%{$data->postal_c}%");
+        }
+
+        return $query->getQuery()->getResult();
     }
 }

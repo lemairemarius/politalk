@@ -1,13 +1,21 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <nav class="navbar rounded-3" style="background-image: linear-gradient(to bottom right, #4f9bc6,#689d71)">
+    <nav class="navbar rounded-3 shadow-lg" style="background-color: #689d71">
         <div class="container-fluid">
-            <div class="d-flex justify-content-around">
-                <img src="{{ asset('asset/pictures/Polivert.jpeg') }}" alt="Logo" width="82" height="65"
-                     class="shadow rounded-3">
-                <h1 class="text-center">Hello</h1>
+            <div class="d-flex">
+                <a href="/">
+                    <img src="{{ asset('asset/pictures/Polivert.jpeg') }}" alt="Logo" width="82" height="65"
+                         class="shadow rounded-3">
+                </a>
+            </div>
+            <div>
+                <h1 class="text-center">Titre de l'application</h1>
+            </div>
+            <div>
+                <button class="btn btn-outline-dark" type="submit">Se connecter / S'inscrire</button>
             </div>
         </div>
     </nav>
 {% endblock %}
+

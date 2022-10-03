@@ -1,3 +1,30 @@
-.backImg{
-    background-image: url("/appli/public/asset/pictures/Communes_of_France.png");
+/* Background image with breakpoint
+For Phones : */
+@media (max-width: 480px) {
+    .backImg {
+        background-image: url("../pictures/Communes_of_France.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center top;
+    }
+}
+/*For tablets: */
+
+@media (min-width: 481px) and (max-width: 1024px) {
+    .backImg {
+        background-image: url("../pictures/Communes_of_France.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center top;
+    }
+}
+/* For desktop devices: */
+
+@media (min-width: 1025px) {
+    .backImg {
+        background-image: url("../pictures/Communes_of_France.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center top;
+    }
 }

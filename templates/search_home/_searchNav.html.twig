@@ -1,0 +1,10 @@
+<div class="w-50 mx-auto mt-3 p-2 rounded-3 text-center" style="background-color: #0dcaf0">
+    {{ form_start(form) }}
+    {{ form_row(form.q) }}
+    {{ form_row(form.postal_c) }}
+    <div class="d-inline-block">
+        <button type="submit" class="btn btn-primary">Rechercher</button>
+        <a href="/" class="btn btn-danger">Retour</a>
+    </div>
+    {{ form_end(form) }}
+</div>

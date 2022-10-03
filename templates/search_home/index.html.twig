@@ -4,7 +4,10 @@
 
 {% block body %}
     {% include 'header.html.twig' %}
-    <div class="container backImg">
+    <div class="container">
+        <div>
+            {% include 'search_home/_searchNav.html.twig' with {form:form} only %}
+        </div>
         <div class="d-flex flex-wrap">
             {% for com in city %}
                 {% include'search_home/_city.html.twig' with {com: com} only %}

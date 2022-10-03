@@ -36,6 +36,9 @@ class User
     #[ORM\Column(length: 255)]
     private ?string $postal_c = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $role = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -121,6 +124,18 @@ class User
     public function setPostalC(string $postal_c): self
     {
         $this->postal_c = $postal_c;
+
+        return $this;
+    }
+
+    public function getRole(): ?string
+    {
+        return $this->role;
+    }
+
+    public function setRole(string $role): self
+    {
+        $this->role = $role;
 
         return $this;
     }
