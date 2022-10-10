@@ -5,46 +5,29 @@
 {% block body %}
     {% include '/header.html.twig' %}
     <div class="container-fluid">
-        <h1 class="text-center">Créer un compte</h1>
-        <div class="row">
-            <div class="col-sm-12 p-4">
-                {{ form_start(registrationForm) }}
-                <div class="row">
-                    <div class="col-sm-6 mt-1">
-                        {{ form_row(registrationForm.name) }}
-                    </div>
-                    <div class="col-sm-6 mt-1">
-                        {{ form_row(registrationForm.fname) }}
-                    </div>
-                    <div class="col-sm-6 mt-1">
-                        {{ form_row(registrationForm.birth_d) }}
-                    </div>
-                    <div class="col-sm-6 mt-1">
-                        {{ form_row(registrationForm.email) }}
-                    </div>
-                    <div class="col-sm-6 mt-1">
-                        {{ form_row(registrationForm.plainPassword, {
-                            label: 'Password'
-                        }) }}
-                    </div>
-                    <div class="col-sm-6 mt-1">
-                        {{ form_row(registrationForm.adress) }}
-                    </div>
-                    <div class="col-sm-6 mt-1">
-                        {{ form_row(registrationForm.city) }}
-                    </div>
-                    <div class="col-sm-6 mt-1">
-                        {{ form_row(registrationForm.postal_c) }}
-                    </div>
-                    <div class="col-sm-6 mt-1">
-                        {{ form_row(registrationForm.agreeTerms) }}
-                    </div>
-                    <div class="mx-auto text-center">
-                        <button type="submit" class="btn btn-success btn-lg">S'enregistrer</button>
-                    </div>
-                    {{ form_end(registrationForm) }}
-                </div>
-            </div>
+        {{ form_start(registrationForm) }}
+        <div class="ctnCo">
+            <h1 class="text-center">informations du compte :</h1>
+            {{ form_row(registrationForm.email) }}
+            {{ form_row(registrationForm.plainPassword, {
+                label: 'Mot de passe : '
+            }) }}
         </div>
+        <div class="perso">
+            <h1 class="text-center">Informations personnels :</h1>
+            {{ form_row(registrationForm.name) }}
+            {{ form_row(registrationForm.fname) }}
+            {{ form_row(registrationForm.birth_d) }}
+            {{ form_row(registrationForm.adress) }}
+            {{ form_row(registrationForm.city) }}
+            {{ form_row(registrationForm.postal_c) }}
+        </div>
+        <div class="mx-auto text-center">
+            <button type="submit" class="btn btn-success btnSize">S'enregistrer</button>
+            <a type="button" href="/" class="btn btn-danger btnSize">Retour</a>
+        </div>
+        {{ form_end(registrationForm) }}
     </div>
+
+
 {% endblock %}

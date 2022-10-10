@@ -43,27 +43,34 @@ class RegistrationFormType extends AbstractType
             ->add('postal_c',TextType::class,[
                 'label'=> 'Code postal :'
             ])
-            ->add('roles', ChoiceType::class, [
-                'choices'=>[
-                    'Utilisateur' => 'ROLE_USER',
-                    'Admin'=> 'ROLE_ADMIN',
-                    'Super Admin'=> 'ROLE_SADMIN'
-                ],
-                'expanded'=>true,
-                'multiple'=>true,
-                'label'=>'Rôles :',
-                'label_attr'=>[
-                    'class' => 'checkbox-inline',''
-                ],
-            ])
-            ->add('agreeTerms', CheckboxType::class, [
-                'mapped' => false,
-                'constraints' => [
-                    new IsTrue([
-                        'message' => 'You should agree to our terms.',
-                    ]),
-                ],
-            ])
+
+            ## A placer dans un nouveau formType pour créer des admins
+
+           # ->add('roles', ChoiceType::class, [
+           #     'choices'=>[
+           #         'Utilisateur' => 'ROLE_USER',
+           #         'Admin'=> 'ROLE_ADMIN',
+           #         'Super Admin'=> 'ROLE_SADMIN'
+           #     ],
+           #     'expanded'=>true,
+           #     'multiple'=>true,
+           #     'label'=>'Rôles :',
+           #     'label_attr'=>[
+           #         'class' => 'checkbox-inline',''
+           #     ],
+           # ])
+
+               ## à Gerer plus tard
+
+          #  ->add('agreeTerms', CheckboxType::class, [
+           #     'label'=> 'Accepter les Termes :',
+           #     'mapped' => false,
+           #     'constraints' => [
+           #         new IsTrue([
+           #             'message' => 'You should agree to our terms.',
+           #         ]),
+           #     ],
+           # ])
             ->add('plainPassword', PasswordType::class, [
                 // instead of being set onto the object directly,
                 // this is read and encoded in the controller
