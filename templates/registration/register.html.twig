@@ -6,15 +6,15 @@
     {% include '/header.html.twig' %}
     <div class="container-fluid">
         {{ form_start(registrationForm) }}
-        <div class="ctnCo">
-            <h1 class="text-center">informations du compte :</h1>
+        <div class="ctnCo mx-auto mt-3 p-4 fontCol">
+            <h1 class="text-center fontH1">informations du compte :</h1>
             {{ form_row(registrationForm.email) }}
             {{ form_row(registrationForm.plainPassword, {
                 label: 'Mot de passe : '
             }) }}
         </div>
-        <div class="perso">
-            <h1 class="text-center">Informations personnels :</h1>
+        <div class="perso mx-auto mt-3 p-4 fontCol">
+            <h1 class="text-center fontH1">Informations personnels :</h1>
             {{ form_row(registrationForm.name) }}
             {{ form_row(registrationForm.fname) }}
             {{ form_row(registrationForm.birth_d) }}
@@ -22,9 +22,9 @@
             {{ form_row(registrationForm.city) }}
             {{ form_row(registrationForm.postal_c) }}
         </div>
-        <div class="mx-auto text-center">
+        <div class="mx-auto text-center mt-3 mb-3 p-2">
             <button type="submit" class="btn btn-success btnSize">S'enregistrer</button>
-            <a type="button" href="/" class="btn btn-danger btnSize">Retour</a>
+            <a href="/"><button type="button" class="btn btn-danger btnSize">Retour</button></a>
         </div>
         {{ form_end(registrationForm) }}
     </div>

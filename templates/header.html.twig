@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <nav class="navbar rounded-3 shadow-lg" style="background-color: #689d71">
+    <nav class="navbar rounded-3 shadow-lg" style="background-color: rgba(104, 157, 113,0.9)">
         <div class="container-fluid">
             <div class="d-flex">
                 <a href="/">
@@ -15,9 +15,25 @@
                 </a>
             </div>
             <div>
-                <a href="/login">
-                    <button class="btn btn-outline-dark" type="button">Se connecter / S'inscrire</button>
-                </a>
+                {% if app.user %}
+                    <div class="mb-3 coMember">
+                        <p>Bonjour {{ app.user.userIdentifier }} </p>
+                        <div class="btnCo">
+                            <a href="{{ path('app_logout') }}">
+                                <button class="btn btn-outline-dark" type="button">se déconnecter</button>
+                            </a>
+                            <a href="{{ path('app_user_edit', {'id': app.user.id}) }}">
+                                <button class="btn btn-outline-dark" type="button"><i class="bi bi-gear-fill">
+                                        Compte</i>
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                {% else %}
+                    <a href="/login">
+                        <button class="btn btn-outline-dark" type="button">Se connecter / S'inscrire</button>
+                    </a>
+                {% endif %}
             </div>
         </div>
     </nav>

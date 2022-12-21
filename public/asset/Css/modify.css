@@ -1,5 +1,13 @@
 /* Background image with breakpoint
+
 For Phones : */
+.backImg{
+    background-image: url("../pictures/Communes_of_France.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+}
+
 @media (max-width: 480px) {
     .backImg {
         background-image: url("../pictures/Communes_of_France.png");
@@ -41,22 +49,49 @@ For Phones : */
     justify-content: center;
 }
 .cntLogin{
-
     width: 300px;
     height: 450px;
-    background-color: #0dcaf0;
+    background-color: rgba(13,202,40,0.8);
     border-radius: 1.5rem;
 }
 .ctnCo{
     width: 600px;
     height: 300px;
-    background-color: #0dcaf0;
+    background-color: rgba(13,202,40,0.8);
     border-radius :1.5rem;
 }
 
 .perso{
-    width: 1000px;
-    height: 600px;
-    background-color:blue;
+    width: 600px;
+    height: 630px;
+    background-color: rgba(1,1,122,0.8);
     border-radius: 1.5rem;
+}
+
+.fontH1{
+    border-bottom: white 3px solid;
+    padding-bottom: 0.5rem;
+}
+
+.coMember{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    padding-top: 0.5rem;
+}
+
+.coMember p{
+    margin-bottom: 0.5rem;
+}
+.btnCo{
+    margin: auto;
+}
+
+.btnCo i{
+    font-style: normal;
+    margin: 0.5rem;
+}
+
+.fontCol{
+    color: white;
 }

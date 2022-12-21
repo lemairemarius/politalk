@@ -41,9 +41,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private ?\DateTimeInterface $birth_d = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $mail = null;
-
-    #[ORM\Column(length: 255)]
     private ?string $adress = null;
 
     #[ORM\Column(length: 255)]
@@ -158,17 +155,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    public function getMail(): ?string
-    {
-        return $this->mail;
-    }
-
-    public function setMail(string $mail): self
-    {
-        $this->mail = $mail;
-
-        return $this;
-    }
 
     public function getAdress(): ?string
     {
